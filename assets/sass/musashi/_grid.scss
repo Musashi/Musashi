@@ -14,8 +14,8 @@ Grid systems are used for creating page layouts through a series of rows and col
   * Rows must be placed within a `.container` (fixed-width) or `.container-fluid` (full-width) for proper alignment and padding.
   * Use rows to create horizontal groups of columns.
   * Content should be placed within columns, and only columns may be immediate children of rows.
-  * Predefined grid classes like `.row` and `.col-xs-4` are available for quickly making grid layouts. Less mixins can also be used for more semantic layouts.
-  * Columns create gutters (gaps between column content) via `padding`. That padding is offset in rows for the first and last column via negative margin on `.rows`.
+  * Predefined components like `<m-row>` and `.col-xs-4` are available for quickly making grid layouts. Less mixins can also be used for more semantic layouts.
+  * Columns create gutters (gaps between column content) via `padding`. That padding is offset in rows for the first and last column via negative margin on `<m-row>`.
   * The negative margin is why the examples below are outdented. It's so that content within grid columns is lined up with non-grid content.
   * Grid columns are created by specifying the number of twelve available columns you wish to span. For example, three equal columns would use three `.col-xs-4`.
   * If more than 12 columns are placed within a single row, each group of extra columns will, as one unit, wrap onto a new line.
@@ -86,43 +86,45 @@ name: d-ex-horizontal
 category: Layout - Grid system
 ---
 
-Using a single set of `.col-md-*` grid classes, you can create a basic grid system that starts out stacked on mobile devices and tablet devices (the extra small to small range) before becoming horizontal on desktop (medium) devices. Place grid columns in any `.row`.
+Using a single set of `.col-md-*` grid classes, you can create a basic grid system that starts out stacked on mobile devices and tablet devices (the extra small to small range) before becoming horizontal on desktop (medium) devices. Place grid columns in any `<m-row>`.
 
 ```html_example
-<div class="row">
-  <div style="background:#999;border:1px solid #333;" class="col-md-1">.col-md-1</div>
-  <div style="background:#999;border:1px solid #333;" class="col-md-1">.col-md-1</div>
-  <div style="background:#999;border:1px solid #333;" class="col-md-1">.col-md-1</div>
-  <div style="background:#999;border:1px solid #333;" class="col-md-1">.col-md-1</div>
-  <div style="background:#999;border:1px solid #333;" class="col-md-1">.col-md-1</div>
-  <div style="background:#999;border:1px solid #333;" class="col-md-1">.col-md-1</div>
-  <div style="background:#999;border:1px solid #333;" class="col-md-1">.col-md-1</div>
-  <div style="background:#999;border:1px solid #333;" class="col-md-1">.col-md-1</div>
-  <div style="background:#999;border:1px solid #333;" class="col-md-1">.col-md-1</div>
-  <div style="background:#999;border:1px solid #333;" class="col-md-1">.col-md-1</div>
-  <div style="background:#999;border:1px solid #333;" class="col-md-1">.col-md-1</div>
-  <div style="background:#999;border:1px solid #333;" class="col-md-1">.col-md-1</div>
-</div>
-<div class="row">
-  <div style="background:#999;border:1px solid #333;" class="col-md-8">.col-md-8</div>
-  <div style="background:#999;border:1px solid #333;" class="col-md-4">.col-md-4</div>
-</div>
-<div class="row">
-  <div style="background:#999;border:1px solid #333;" class="col-md-4">.col-md-4</div>
-  <div style="background:#999;border:1px solid #333;" class="col-md-4">.col-md-4</div>
-  <div style="background:#999;border:1px solid #333;" class="col-md-4">.col-md-4</div>
-</div>
-<div class="row">
-  <div style="background:#999;border:1px solid #333;" class="col-md-6">.col-md-6</div>
-  <div style="background:#999;border:1px solid #333;" class="col-md-6">.col-md-6</div>
-</div>
+<m-container fluid>
+  <m-row>
+    <div style="background:#999;border:1px solid #333;" class="col-md-1">.col-md-1</div>
+    <div style="background:#999;border:1px solid #333;" class="col-md-1">.col-md-1</div>
+    <div style="background:#999;border:1px solid #333;" class="col-md-1">.col-md-1</div>
+    <div style="background:#999;border:1px solid #333;" class="col-md-1">.col-md-1</div>
+    <div style="background:#999;border:1px solid #333;" class="col-md-1">.col-md-1</div>
+    <div style="background:#999;border:1px solid #333;" class="col-md-1">.col-md-1</div>
+    <div style="background:#999;border:1px solid #333;" class="col-md-1">.col-md-1</div>
+    <div style="background:#999;border:1px solid #333;" class="col-md-1">.col-md-1</div>
+    <div style="background:#999;border:1px solid #333;" class="col-md-1">.col-md-1</div>
+    <div style="background:#999;border:1px solid #333;" class="col-md-1">.col-md-1</div>
+    <div style="background:#999;border:1px solid #333;" class="col-md-1">.col-md-1</div>
+    <div style="background:#999;border:1px solid #333;" class="col-md-1">.col-md-1</div>
+  </m-row>
+  <m-row>
+    <div style="background:#999;border:1px solid #333;" class="col-md-8">.col-md-8</div>
+    <div style="background:#999;border:1px solid #333;" class="col-md-4">.col-md-4</div>
+  </m-row>
+  <m-row>
+    <div style="background:#999;border:1px solid #333;" class="col-md-4">.col-md-4</div>
+    <div style="background:#999;border:1px solid #333;" class="col-md-4">.col-md-4</div>
+    <div style="background:#999;border:1px solid #333;" class="col-md-4">.col-md-4</div>
+  </m-row>
+  <m-row>
+    <div style="background:#999;border:1px solid #333;" class="col-md-6">.col-md-6</div>
+    <div style="background:#999;border:1px solid #333;" class="col-md-6">.col-md-6</div>
+  </m-row>
+</m-container>
 ```
 
 
 */
 
 
-.container {
+m-container {
   @include container-fixed();
 
   @media (min-width: $screen-sm-min) {
@@ -142,7 +144,7 @@ Using a single set of `.col-md-*` grid classes, you can create a basic grid syst
 // Utilizes the mixin meant for fixed width containers, but without any defined
 // width for fluid, full width layouts.
 
-.container-fluid {
+m-container[fluid] {
   @include container-fixed();
 }
 
@@ -151,7 +153,8 @@ Using a single set of `.col-md-*` grid classes, you can create a basic grid syst
 //
 // Rows contain and clear the floats of your columns.
 
-.row {
+m-row {
+  display: block;
   @include make-row();
 }
 

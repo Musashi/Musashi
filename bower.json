@@ -3,6 +3,6 @@
   "devDependencies": {
     "polymer": "~0.3.3",
     "angular": "~1.2.21",
-    "Cortana": "~1.2.1"
+    "Cortana": "~1.2.4"
   }
 }

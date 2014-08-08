@@ -17,6 +17,7 @@ gulp.task('vendors', function() {
 
   gulp.src([
       'bower_components/angular/angular.js',
+      'bower_components/platform/platform.js',
       'bower_components/polymer/polymer.js'
     ])
     .pipe($.concat('vendors.min.js'))

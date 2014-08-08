@@ -15,15 +15,20 @@ dependencies:
   - build/js
   - build/css
   - build/fonts
+  - assets/components
 
 # List all css to include for the styleguide render examples (path from styleguide directory)
 css_include:
   - 'css/musashi.css'
 
+# List all web components to include
+components_include:
+  - 'components/grid.html'
+
 # List all js to include for the styleguide render examples (path from styleguide directory)
 js_include:
   - 'js/vendors.min.js'
-  - 'js/main.js'
+  - 'js/musashi.js'
 
 # String who is used to split the category name and create category wrapper
 name_scope: ' - '
