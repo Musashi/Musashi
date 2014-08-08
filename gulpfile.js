@@ -46,7 +46,7 @@ gulp.task('styles', function() {
  * With error reporting on compiling (so that there's no crash)
  */
 gulp.task('scripts', function() {
-  return gulp.src('assets/js/*.js')
+  return gulp.src('assets/js/**/*.js')
     .pipe($.concat('musashi.js'))
     .pipe(gulp.dest('build/js'))
     .pipe($.rename({ suffix: '.min' }))
