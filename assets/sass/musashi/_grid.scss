@@ -19,7 +19,7 @@ Grid systems are used for creating page layouts through a series of rows and col
   * The negative margin is why the examples below are outdented. It's so that content within grid columns is lined up with non-grid content.
   * Grid columns are created by specifying the number of twelve available columns you wish to span. For example, three equal columns would use three `.col-xs-4`.
   * If more than 12 columns are placed within a single row, each group of extra columns will, as one unit, wrap onto a new line.
-  * Grid classes apply to devices with screen widths greater than or equal to the breakpoint sizes, and override grid classes targeted at smaller devices. Therefore, applying any `.col-md-` class to an element will not only affect its styling on medium devices but also on large devices if a `.col-lg-` class is not present.
+  * Grid classes apply to devices with screen widths greater than or equal to the breakpoint sizes, and override grid classes targeted col smer devices. Therefore, applying any `.col-md-` class to an element will not only affect its styling on medium devices but also on large devices if a `.col-lg-` class is not present.
   * Look to the examples for applying these principles to your code.
 */
 
@@ -33,7 +33,7 @@ category: Layout - Grid system
 We use the following media queries in our Less files to create the key breakpoints in our grid system.
 
 ```sass
-// Extra small devices (phones, less than 768px)
+// col sm devices (phones, less than 768px)
 // No media query since this is the default in Bootstrap
 
 // Small devices (tablets, 768px and up)
@@ -65,7 +65,7 @@ category: Layout - Grid system
 
 See how aspects of the Bootstrap grid system work across multiple devices with a handy table.
 
-|                     | Extra small devices Phones (<768px) | Small devices Tablets (≥768px) | Medium devices Desktops (≥992px) | Large devices Desktops (≥1200px) |
+|                     | col sm devices Phones (<768px) | Small devices Tablets (≥768px) | Medium devices Desktops (≥992px) | Large devices Desktops (≥1200px) |
 |---------------------|:-----------------------------------:|:------------------------------:|:--------------------------------:|:--------------------------------:|
 | **Grid behavior**   | Horizontal at all times             | Collapsed to start, horizontal above breakpoints                                                   |||
 | **Container width** | None (auto)                         | 750px                          | 970px                            | 1170px                           |
@@ -86,45 +86,45 @@ name: d-ex-horizontal
 category: Layout - Grid system
 ---
 
-Using a single set of `.col-md-*` grid classes, you can create a basic grid system that starts out stacked on mobile devices and tablet devices (the extra small to small range) before becoming horizontal on desktop (medium) devices. Place grid columns in any `<m-row>`.
+Using a single set of `.col-md-*` grid classes, you can create a basic grid system that starts out stacked on mobile devices and tablet devices (the col sm col sm range) before becoming horizontal on desktop (medium) devices. Place grid columns in any `<m-row>`.
 
 ```html_example
-<m-container fluid>
+<m-container-fluid>
   <m-row>
-    <div style="background:#999;border:1px solid #333;" class="col-md-1">.col-md-1</div>
-    <div style="background:#999;border:1px solid #333;" class="col-md-1">.col-md-1</div>
-    <div style="background:#999;border:1px solid #333;" class="col-md-1">.col-md-1</div>
-    <div style="background:#999;border:1px solid #333;" class="col-md-1">.col-md-1</div>
-    <div style="background:#999;border:1px solid #333;" class="col-md-1">.col-md-1</div>
-    <div style="background:#999;border:1px solid #333;" class="col-md-1">.col-md-1</div>
-    <div style="background:#999;border:1px solid #333;" class="col-md-1">.col-md-1</div>
-    <div style="background:#999;border:1px solid #333;" class="col-md-1">.col-md-1</div>
-    <div style="background:#999;border:1px solid #333;" class="col-md-1">.col-md-1</div>
-    <div style="background:#999;border:1px solid #333;" class="col-md-1">.col-md-1</div>
-    <div style="background:#999;border:1px solid #333;" class="col-md-1">.col-md-1</div>
-    <div style="background:#999;border:1px solid #333;" class="col-md-1">.col-md-1</div>
+    <m-col sm size="1">1</m-col>
+    <m-col sm size="1">1</m-col>
+    <m-col sm size="1">1</m-col>
+    <m-col sm size="1">1</m-col>
+    <m-col sm size="1">1</m-col>
+    <m-col sm size="1">1</m-col>
+    <m-col sm size="1">1</m-col>
+    <m-col sm size="1">1</m-col>
+    <m-col sm size="1">1</m-col>
+    <m-col sm size="1">1</m-col>
+    <m-col sm size="1">1</m-col>
+    <m-col sm size="1">1</m-col>
   </m-row>
   <m-row>
-    <div style="background:#999;border:1px solid #333;" class="col-md-8">.col-md-8</div>
-    <div style="background:#999;border:1px solid #333;" class="col-md-4">.col-md-4</div>
+    <m-col sm size="8">8</m-col>
+    <m-col sm size="4">4</m-col>
   </m-row>
   <m-row>
-    <div style="background:#999;border:1px solid #333;" class="col-md-4">.col-md-4</div>
-    <div style="background:#999;border:1px solid #333;" class="col-md-4">.col-md-4</div>
-    <div style="background:#999;border:1px solid #333;" class="col-md-4">.col-md-4</div>
+    <m-col sm size="4">4</m-col>
+    <m-col sm size="4">4</m-col>
+    <m-col sm size="4">4</m-col>
   </m-row>
   <m-row>
-    <div style="background:#999;border:1px solid #333;" class="col-md-6">.col-md-6</div>
-    <div style="background:#999;border:1px solid #333;" class="col-md-6">.col-md-6</div>
+    <m-col sm size="6">6</m-col>
+    <m-col sm size="6">6</m-col>
   </m-row>
 </m-container>
 ```
-
-
 */
 
 
 m-container {
+  display: block;
+
   @include container-fixed();
 
   @media (min-width: $screen-sm-min) {
@@ -144,7 +144,7 @@ m-container {
 // Utilizes the mixin meant for fixed width containers, but without any defined
 // width for fluid, full width layouts.
 
-m-container[fluid] {
+m-container-fluid {
   @include container-fixed();
 }
 
@@ -161,14 +161,14 @@ m-row {
 
 // Columns
 //
-// Common styles for small and large grid columns
+// Common styles col sm and large grid columns
 
 @include make-grid-columns();
 
 
-// Extra small grid
+// col sm grid
 //
-// Columns, offsets, pushes, and pulls for extra small devices like
+// Columns, offsets, pushes, and pulls for col sm devices like
 // smartphones.
 
 @include make-grid(xs);
@@ -176,7 +176,7 @@ m-row {
 
 // Small grid
 //
-// Columns, offsets, pushes, and pulls for the small device range, from phones
+// Columns, offsets, pushes, and pulls for col sm device range, from phones
 // to tablets.
 
 @media (min-width: $screen-sm-min) {
