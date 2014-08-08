@@ -1,5 +1,5 @@
-# Directory to parse
-source: assets
+# Directory used to build the styleguide. `./assets/sass/musashi` when editing musashi and `./assets/sass/theme` when theming
+source: assets/sass/musashi
 
 # Directory to build the styleguide
 destination: styleguide

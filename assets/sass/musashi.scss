@@ -1,3 +1,7 @@
+//==============================================================
+// Musashi stylesheets
+//==============================================================
+
 // Core variables and mixins
 @import "musashi/variables";
 @import "musashi/mixins";
@@ -48,3 +52,12 @@
 // Utility classes
 @import "musashi/utilities";
 @import "musashi/responsive-utilities";
+
+
+//==============================================================
+// Theme stylesheets
+//==============================================================
+
+
+Using to import your own theme
+// @import "theme/theme";
